@@ -1,18 +1,17 @@
-package rest.hh.auth;
+package rest.hh.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import rest.hh.models.Role;
 
 @Data
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class RegisterRequest {
+public class UserDto {
+    private Long id;
     @NotEmpty(message = "firstname should not be empty")
     @Size(min =2, max=16,message = "invalid size")
     private String firstname;
@@ -26,4 +25,8 @@ public class RegisterRequest {
     @NotEmpty(message = "password should not be empty")
     @Size(min =8, max=16,message = "invalid size")
     private String password;
+    @NotNull(message = "role should not be empty")
+    private Role role;
+
+
 }

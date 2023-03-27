@@ -18,11 +18,15 @@ import java.util.List;
 @Table(name="cultures")
 public class Culture {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    @Column(name = "description", length = 4096)
+    private String description;
     private Double optimalTemperature;
-    private LocalDateTime optimalTime;
+    private String optimalTime;
+    @Column(name = "tips", length = 4096)
+    private String tips;
     @ManyToOne
     @JoinColumn(name = "type")
     private CultureType type;

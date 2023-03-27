@@ -1,0 +1,14 @@
+POST http://localhost:8080/auth/authenticate
+Content-Type: application/json
+
+{
+  "email":"NB@email.ru",
+  "password": "123"
+}
+###
+GET http://localhost:8080/cultures/getTips/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJOQkBlbWFpbC5ydSIsImlhdCI6MTY3OTUwNTg1MiwiZXhwIjoxNjc5NTE2NjUyfQ.6kLpdkE-yLhoHkfO21Knb-BrqycEeT-sBDFikWG-koc
+
+###
+GET http://localhost:8080/cultures/getOptimalTime/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJOQkBlbWFpbC5ydSIsImlhdCI6MTY3OTUwNTg1MiwiZXhwIjoxNjc5NTE2NjUyfQ.6kLpdkE-yLhoHkfO21Knb-BrqycEeT-sBDFikWG-koc

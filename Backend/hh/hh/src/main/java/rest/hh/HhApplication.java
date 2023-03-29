@@ -20,6 +20,7 @@ public class HhApplication {
 			SECRET_KEY= reader2.readLine();
 		}
 		SpringApplication.run(HhApplication.class, args);
+
 	}
 
 }

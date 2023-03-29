@@ -1,5 +1,6 @@
 package rest.hh.services.impl;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import rest.hh.dto.UserDto;
 import rest.hh.models.User;
@@ -45,8 +46,9 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public void save(User user) {
+    public ResponseEntity save(User user) {
         userRepository.save(user);
+        return null;
     }
 
     @Override

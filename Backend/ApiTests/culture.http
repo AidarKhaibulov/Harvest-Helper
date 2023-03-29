@@ -2,13 +2,21 @@ POST http://localhost:8080/auth/authenticate
 Content-Type: application/json
 
 {
-  "email":"NB@email.ru",
+  "email":"balakshin1357@yandex.ru",
   "password": "123"
 }
 ###
 GET http://localhost:8080/cultures/getTips/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJOQkBlbWFpbC5ydSIsImlhdCI6MTY3OTUwNTg1MiwiZXhwIjoxNjc5NTE2NjUyfQ.6kLpdkE-yLhoHkfO21Knb-BrqycEeT-sBDFikWG-koc
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDA4MzQzNiwiZXhwIjoxNjgwMDk0MjM2fQ.Vy4YTwRMxuqdBMVMKWhtno1RrCosLD8GMEM4_euxe80
 
 ###
 GET http://localhost:8080/cultures/getOptimalTime/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJOQkBlbWFpbC5ydSIsImlhdCI6MTY3OTUwNTg1MiwiZXhwIjoxNjc5NTE2NjUyfQ.6kLpdkE-yLhoHkfO21Knb-BrqycEeT-sBDFikWG-koc
+
+###
+POST http://localhost:8080/weather/notifications/True
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDA4MzQzNiwiZXhwIjoxNjgwMDk0MjM2fQ.Vy4YTwRMxuqdBMVMKWhtno1RrCosLD8GMEM4_euxe80
+
+###
+GET http://localhost:8080/weather/alert/Казань
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDA4MzQzNiwiZXhwIjoxNjgwMDk0MjM2fQ.Vy4YTwRMxuqdBMVMKWhtno1RrCosLD8GMEM4_euxe80

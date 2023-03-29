@@ -31,6 +31,7 @@ public class User implements UserDetails {
     private List<Culture> cultures = new ArrayList<>();
     @Enumerated(EnumType.STRING)
     private Role role;
+    private Boolean notifications;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

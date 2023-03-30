@@ -18,5 +18,16 @@ POST http://localhost:8080/weather/notifications/True
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDA4MzQzNiwiZXhwIjoxNjgwMDk0MjM2fQ.Vy4YTwRMxuqdBMVMKWhtno1RrCosLD8GMEM4_euxe80
 
 ###
-GET http://localhost:8080/weather/alert/Казань
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDA4MzQzNiwiZXhwIjoxNjgwMDk0MjM2fQ.Vy4YTwRMxuqdBMVMKWhtno1RrCosLD8GMEM4_euxe80
+GET http://localhost:8080/weather/alert/Оймякон
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDE1NzY4OSwiZXhwIjoxNjgwMTY4NDg5fQ.ORnOhddSklKarx5swWUaIuCCFmombPM0gpUmoMsKC4s
+
+###
+POST http://localhost:8080/sendMail
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDE1NzY4OSwiZXhwIjoxNjgwMTY4NDg5fQ.ORnOhddSklKarx5swWUaIuCCFmombPM0gpUmoMsKC4s
+Content-Type: application/json
+
+{
+  "recipient":"Khayrullinbulka@gmail.com",
+  "msgBody": "Здравствуйте, Булат! Команда Harvest Helper сердечно благодарит вас за доверие и надеется на плодотворное сотрудничество!",
+  "subject": "Вы успешно зарегистрированы в Harvest Helper!"
+}

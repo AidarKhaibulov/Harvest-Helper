@@ -4,8 +4,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import rest.hh.EmailDetails;
 import rest.hh.auth.SecurityUtil;
 import rest.hh.models.User;
+import rest.hh.services.EmailService;
 import rest.hh.services.UserService;
 
 import java.io.BufferedReader;
@@ -21,6 +23,7 @@ import java.util.regex.Pattern;
 @RequiredArgsConstructor
 public class WeatherApiController {
     private final UserService userService;
+    private final EmailService emailService;
 
     @GetMapping("/{city}")
     public ResponseEntity<String> getTips(@PathVariable String city) throws IOException {
@@ -39,7 +42,14 @@ public class WeatherApiController {
                 System.out.println(Double.parseDouble(matcher.group(1)));
                 if (Double.parseDouble(matcher.group(1)) < 0.00) {
                     System.out.println("ALERT!");
-                    break;
+
+                    String message="Здравствуйте, "+u.getFirstname()+" "+u.getLastname()+"! Будьте бдительны: в ближайшее время в городе " +
+                            city+" ожидаются заморозки!\nТемпература: "+matcher.group(1);
+                    EmailDetails details=new EmailDetails(SecurityUtil.getSessionUser(),message,"Предупреждение о непогоде!");
+                    String status
+                            = emailService.sendSimpleMail(details);
+
+                    return ResponseEntity.ok(status);
                 } 
             }
             return ResponseEntity.ok(text);

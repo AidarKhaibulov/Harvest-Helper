@@ -1,0 +1,59 @@
+
+POST http://localhost:8080/auth/authenticate
+Content-Type: application/json
+
+{
+  "email":"balakshin1357@yandex.ru",
+  "password": "123"
+}
+
+> {%
+client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+###
+POST http://localhost:8080/auth/authenticate
+Content-Type: application/json
+
+{
+  "email":"balakshin1357@yandex.ru",
+  "password": "1234"
+}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 403, "Response status is not 403");
+    });
+%}
+###
+POST http://localhost:8080/auth/authenticate
+Content-Type: application/json
+
+{
+  "email":"balakshin1357@yandex.ru",
+  "password": "123"
+}
+
+> {% client.global.set("auth_token", response.body.token);%}
+
+### Authorization by token, part 2. Use token to authorize.
+GET http://localhost:8080/cultures/getTips/1
+Authorization: Bearer {{auth_token}}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+### Authorization by token, part 2. Use token to authorize.
+GET http://localhost:8080/cultures/getTips/1
+Authorization: Bearer {{auth_token}}+"sdfsadfasdfasdfasdf"
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 403, "Response status is not 403");
+    });
+%}

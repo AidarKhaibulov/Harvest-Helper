@@ -1,0 +1,37 @@
+@startuml
+class PlantingTable{
+  string[] cropNames
+  string[] dates
+  bool[][] table
+}
+class Advice{
+  string cropName
+  string advice
+  string[] errors
+}
+class Glossary{
+  Advice[] advices
+}
+class Coordinate{
+  int x
+  int y
+}
+class Weather{
+  string name
+  int temperature
+  string precipitation
+}
+class WeatherRegion{
+  string name
+  Weather weather
+  Coordinate[] border
+}
+class WeatherMap{
+  WeatherRegion[] regions
+}
+
+WeatherMap o-- WeatherRegion
+WeatherRegion o-- Coordinate
+WeatherRegion o-- Weather
+Glossary o-- Advice
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+(*) --> Open glossary 
+--> ===A1===
+--> Add post
+--> ===A2===
+===A1=== --> Edit post
+--> ===A2===
+===A1=== --> Delete post
+--> ===A2===
+--> Close glossary
+--> (*)
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+Admin -> Glossary: request to add post
+Glossary -> Admin: open addition window
+Admin -> Glossary: input all information
+Glossary --> Admin: confirm posting
+@enduml

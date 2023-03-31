@@ -1,0 +1,6 @@
+@startuml
+Admin -> PlantingTable: request to edit data
+PlantingTable -> Admin: open edit window
+Admin -> PlantingTable: input changes
+PlantingTable --> Admin: confirm changes
+@enduml

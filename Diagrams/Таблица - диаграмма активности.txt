@@ -1,0 +1,10 @@
+@startuml
+(*) --> ===B1===
+--> Add Crop
+--> ===B2===
+===B1=== --> Edit Crop
+--> ===B2===
+===B1=== --> Delete Crop
+--> ===B2===
+--> (*)
+@enduml

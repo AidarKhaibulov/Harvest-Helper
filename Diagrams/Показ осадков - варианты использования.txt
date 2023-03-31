@@ -1,0 +1,18 @@
+@startuml
+rectangle "Precipitations" as pt{
+(Precipitation display) as show
+(Precipitation view) as watch
+(Switching precipitation) as switch
+(Precipitation settings) as settings
+}
+actor User
+actor Admin
+actor Program
+show -[hidden]-> settings
+settings -[hidden]-> watch
+watch -[hidden]-> switch
+Program -> show
+Admin -> settings
+watch <- User
+switch <- User
+@enduml

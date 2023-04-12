@@ -1,0 +1,23 @@
+@startuml
+rectangle "Glossary of Advices" as Goa{
+(View information)
+(Ask a question)
+(Add post)
+(Edit post)
+(Delete post)
+(Answer the question)
+}
+actor User
+actor Admin
+(View information) -[hidden]-> (Ask a question)
+(Ask a question) -[hidden]-> (Add post)
+(Add post) -[hidden]-> (Edit post)
+(Edit post) -[hidden]-> (Delete post)
+(Delete post) -[hidden]-> (Answer the question)
+User -> (View information)
+User -> (Ask a question)
+(Add post) <- Admin
+(Edit post) <- Admin
+(Delete post) <- Admin
+(Answer the question) <- Admin
+@enduml

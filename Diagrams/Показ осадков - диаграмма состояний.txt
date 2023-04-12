@@ -1,0 +1,19 @@
+@startuml
+state Edit{
+  state "Confirmation" as Econf
+  [*] -down-> DataInput
+  state ec <<choice>>
+  DataInput -down-> ec: change data
+  ec -up-> DataInput: incorrect data
+  ec -down-> Econf: correct data
+  state ecc <<choice>>
+  Econf -down-> ecc: confirmation input
+  ecc -down-> EditRegion: confirmed
+  ecc -down-> [*]: cancelled
+  EditRegion -down-> [*]
+}
+[*] -down-> Edit: press edit button
+Edit: entry / open edit page
+Edit: exit / close edit page
+Edit -down-> [*]
+@enduml

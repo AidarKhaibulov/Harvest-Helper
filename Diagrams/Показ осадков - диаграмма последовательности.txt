@@ -1,0 +1,9 @@
+@startuml
+Admin -> WeatherMap: request to edit region data
+Admin <-- WeatherMap: request for data editing
+Admin -> WeatherMap: data changes
+WeatherMap -> WeatherRegion: change data
+WeatherRegion -> WeatherRegion: change data
+WeatherRegion --> WeatherMap: update region data
+WeatherMap --> Admin: region data informing
+@enduml

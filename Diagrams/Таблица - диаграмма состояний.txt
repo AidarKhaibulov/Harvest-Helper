@@ -1,0 +1,50 @@
+@startuml
+state Add{
+  state "Confirmation" as Aconf
+  state "DataInput" as Adi
+  [*] -down-> Adi
+  state ac <<choice>>
+  Adi -down-> ac: input data
+  ac -up-> Adi: incorrect data
+  ac -down-> Aconf: correct data
+  state acc <<choice>>
+  Aconf -down-> acc: confirmation input
+  acc -down-> AddCrop: confirmed
+  acc -down-> [*]: cancelled
+  AddCrop -down-> [*]
+}
+state Edit{
+  state "Confirmation" as Econf
+  [*] -down-> DataInput
+  state ec <<choice>>
+  DataInput -down-> ec: change data
+  ec -up-> DataInput: incorrect data
+  ec -down-> Econf: correct data
+  state ecc <<choice>>
+  Econf -down-> ecc: confirmation input
+  ecc -down-> EditCrop: confirmed
+  ecc -down-> [*]: cancelled
+  EditCrop -down-> [*]
+}
+state Delete{
+  state "Confirmation" as Dconf
+  [*] -down-> Dconf
+  state dc <<choice>>
+  Dconf -down-> dc: confirmation input
+  dc -down-> DeleteCrop: confirmed
+  dc -down-> [*]: cancelled
+  DeleteCrop -down-> [*]
+}
+[*] -down-> Add: press add button
+[*] -down-> Edit: press edit button
+[*] -down-> Delete: press delete button
+Add: entry / open add page
+Add: exit / close add page
+Edit: entry / open edit page
+Edit: exit / close edit page
+Delete: entry / open confirmation window
+Delete: exit / close confirmation window
+Edit -down-> [*]
+Add -down-> [*]
+Delete -down-> [*]
+@enduml

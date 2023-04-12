@@ -1,0 +1,7 @@
+@startuml@startuml
+(*) --> Open precipitation map
+--> Choose precipitation
+-left-> See precipitation`
+--> Choose precipitation
+--> (*)
+@enduml

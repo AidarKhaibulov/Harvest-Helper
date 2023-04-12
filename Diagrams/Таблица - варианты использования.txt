@@ -1,0 +1,16 @@
+@startuml
+rectangle "Planting Table" as pt{
+  (View table) as view
+  (Add crop) as add
+  (Edit crop) as edit
+  (Delete crop) as delete
+}
+actor User
+view -[hidden]-> add
+add -[hidden]-> edit
+edit -[hidden]-> delete
+User -> view
+add <- Admin
+edit <- Admin
+delete <- Admin
+@enduml

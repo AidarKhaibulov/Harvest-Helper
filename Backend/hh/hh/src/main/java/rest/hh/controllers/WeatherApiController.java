@@ -66,7 +66,7 @@ public class WeatherApiController {
 
     private String callApi(String city, String method) throws IOException {
         String id = "b1c34ff82615fee84de5da8523f7a397";
-        URL url = new URL("https://api.openweathermap.org/data/2.5/" + method + "?q=" + city + "&appid=" + id + "&mode=xml&units=metric&lang=RU");
+        URL url = new URL("https://api.openweathermap.org/data/2.5/" + method + "?q=" + city + "&appid=" + id + "&mode=json&units=metric&lang=RU");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
         BufferedReader in = new BufferedReader(

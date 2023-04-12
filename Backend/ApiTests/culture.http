@@ -7,27 +7,31 @@ Content-Type: application/json
 }
 ###
 GET http://localhost:8080/cultures/getTips/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDA4MzQzNiwiZXhwIjoxNjgwMDk0MjM2fQ.Vy4YTwRMxuqdBMVMKWhtno1RrCosLD8GMEM4_euxe80
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDI0ODEwMywiZXhwIjoxNjgwMjU4OTAzfQ.sud-b3YsFNPjpxS1kaQrxmOKL1tdThJJggHXw_rffAA
 
 ###
 GET http://localhost:8080/cultures/getOptimalTime/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJOQkBlbWFpbC5ydSIsImlhdCI6MTY3OTUwNTg1MiwiZXhwIjoxNjc5NTE2NjUyfQ.6kLpdkE-yLhoHkfO21Knb-BrqycEeT-sBDFikWG-koc
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDI0ODEwMywiZXhwIjoxNjgwMjU4OTAzfQ.sud-b3YsFNPjpxS1kaQrxmOKL1tdThJJggHXw_rffAA
 
 ###
 POST http://localhost:8080/weather/notifications/True
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDA4MzQzNiwiZXhwIjoxNjgwMDk0MjM2fQ.Vy4YTwRMxuqdBMVMKWhtno1RrCosLD8GMEM4_euxe80
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDI0ODMxNiwiZXhwIjoxNjgwMjU5MTE2fQ.OiEhb4ChgflNLKLXXYB-61iQdVcQH5sUdtxmevi-Uio
 
 ###
 GET http://localhost:8080/weather/alert/Оймякон
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDE1NzY4OSwiZXhwIjoxNjgwMTY4NDg5fQ.ORnOhddSklKarx5swWUaIuCCFmombPM0gpUmoMsKC4s
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDI0ODMxNiwiZXhwIjoxNjgwMjU5MTE2fQ.OiEhb4ChgflNLKLXXYB-61iQdVcQH5sUdtxmevi-Uio
 
 ###
 POST http://localhost:8080/sendMail
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDE1NzY4OSwiZXhwIjoxNjgwMTY4NDg5fQ.ORnOhddSklKarx5swWUaIuCCFmombPM0gpUmoMsKC4s
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDI0ODEwMywiZXhwIjoxNjgwMjU4OTAzfQ.sud-b3YsFNPjpxS1kaQrxmOKL1tdThJJggHXw_rffAA
 Content-Type: application/json
 
 {
-  "recipient":"Khayrullinbulka@gmail.com",
-  "msgBody": "Здравствуйте, Булат! Команда Harvest Helper сердечно благодарит вас за доверие и надеется на плодотворное сотрудничество!",
+  "recipient":"balakshin1357@yandex.ru",
+  "msgBody": "смс в  10:50",
   "subject": "Вы успешно зарегистрированы в Harvest Helper!"
 }
+
+###
+GET http://localhost:8080/weather/казань
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWxha3NoaW4xMzU3QHlhbmRleC5ydSIsImlhdCI6MTY4MDI0ODEwMywiZXhwIjoxNjgwMjU4OTAzfQ.sud-b3YsFNPjpxS1kaQrxmOKL1tdThJJggHXw_rffAA

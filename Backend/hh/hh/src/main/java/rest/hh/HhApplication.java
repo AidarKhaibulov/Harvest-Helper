@@ -10,15 +10,9 @@ import java.io.InputStreamReader;
 
 @SpringBootApplication
 public class HhApplication {
-	public static  String SECRET_KEY="";
-	public static void main(String[] args) throws IOException {
-		try (
-				InputStream is2 = HhApplication.class.getResourceAsStream("/sk.txt");
-				BufferedReader reader2 = new BufferedReader(new InputStreamReader(is2))
-		)
-		{
-			SECRET_KEY= reader2.readLine();
-		}
+	public static  String SECRET_KEY="404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970";
+	public static void main(String[] args)  {
+
 		SpringApplication.run(HhApplication.class, args);
 
 	}

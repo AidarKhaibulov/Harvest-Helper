@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: ${PDB_UN}
+      POSTGRES_DB: hh
+      POSTGRES_PASSWORD: ${PDB_PW}
+    ports:
+      - "5434:5432"
+
+    volumes:
+      - "pgdb:/var/lib/postgresql/data"
+
+  app:
+    build:
+      dockerfile: Dockerfile
+    command: java -jar ./app.jar
+    environment:
+      PORT: 8080
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/hh
+      SPRING_DATASOURCE_USERNAME: ${PDB_UN}
+      SPRING_DATASOURCE_PASSWORD: ${PDB_PW}
+      SPRING_MAIL_USERNAME: ${SMTP_USERNAME}
+      SPRING_MAIL_PASSWORD: ${SMTP_PASSWORD}
+
+    image: 'hh'
+    ports:
+      - 8091:8080
+    depends_on:
+      - postgres
+
+
+volumes:
+  pgdb:

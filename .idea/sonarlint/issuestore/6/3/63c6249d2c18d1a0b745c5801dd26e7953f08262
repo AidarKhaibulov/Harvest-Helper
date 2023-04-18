@@ -1,0 +1,11 @@
+
+J
+java:S3740="/Provide the parametrized type for this generic.(‹¼æâÿÿÿÿÿ
+C
+java:S5411%"(Use a primitive boolean expression here.(ÇÜ™¶ûÿÿÿÿ
+k
+java:S3655$"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(±Ä¡ÿùÿÿÿÿ
+k
+java:S3655>"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(±Ä¡ÿùÿÿÿÿ
+S	java:S106*"9Replace this use of System.out or System.err by a logger.(±¯Ò›þÿÿÿÿ
+S	java:S106,"9Replace this use of System.out or System.err by a logger.(í±›šøÿÿÿÿ

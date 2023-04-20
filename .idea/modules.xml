@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/HarvestHelper.iml" filepath="$PROJECT_DIR$/.idea/HarvestHelper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Backend/hh/hh/hh.iml" filepath="$PROJECT_DIR$/Backend/hh/hh/hh.iml" />
     </modules>
   </component>
 </project>

@@ -18,8 +18,6 @@ public class UserDto {
     @NotEmpty(message = "lastname should not be empty")
     @Size(min =2, max=16,message = "invalid size")
     private String lastname;
-    @NotEmpty(message = "email should not be empty")
-    @Size(min =2, max=16,message = "invalid size")
     @Email
     private String email;
     @NotEmpty(message = "password should not be empty")
